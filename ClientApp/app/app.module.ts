@@ -32,9 +32,7 @@ import { VihicleFormComponent } from './components/vihicle-form/vihicle-form.com
         RouterModule.forRoot([
             {path: 'vehicles/new', component: VihicleFormComponent},
             { path: '', redirectTo: 'home', pathMatch: 'full' },
-            { path: 'home', component: HomeComponent },
-            { path: 'counter', component: CounterComponent },
-            { path: 'fetch-data', component: FetchDataComponent },
+            { path: 'home', component: HomeComponent },         
             { path: '**', redirectTo: 'home' }
         ])
     ],
