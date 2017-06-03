@@ -7,3 +7,12 @@ D:\AngularJS\vega\obj\Debug\netcoreapp1.1\Vega.AssemblyInfo.cs
 D:\AngularJS\vega\obj\Debug\netcoreapp1.1\Vega.dll
 D:\AngularJS\vega\obj\Debug\netcoreapp1.1\Vega.pdb
 D:\AngularJS\vega\obj\Debug\netcoreapp1.1\Vega.csprojResolveAssemblyReference.cache
+D:\Angular\New Angular\Angular-2\bin\Debug\netcoreapp1.1\Vega.deps.json
+D:\Angular\New Angular\Angular-2\bin\Debug\netcoreapp1.1\Vega.runtimeconfig.json
+D:\Angular\New Angular\Angular-2\bin\Debug\netcoreapp1.1\Vega.runtimeconfig.dev.json
+D:\Angular\New Angular\Angular-2\bin\Debug\netcoreapp1.1\Vega.dll
+D:\Angular\New Angular\Angular-2\bin\Debug\netcoreapp1.1\Vega.pdb
+D:\Angular\New Angular\Angular-2\obj\Debug\netcoreapp1.1\Vega.csprojResolveAssemblyReference.cache
+D:\Angular\New Angular\Angular-2\obj\Debug\netcoreapp1.1\Vega.AssemblyInfo.cs
+D:\Angular\New Angular\Angular-2\obj\Debug\netcoreapp1.1\Vega.dll
+D:\Angular\New Angular\Angular-2\obj\Debug\netcoreapp1.1\Vega.pdb
