@@ -8,9 +8,10 @@ using Angular_2.Persitence;
 namespace Vega.Migrations
 {
     [DbContext(typeof(VegaDbContext))]
-    partial class VegaDbContextModelSnapshot : ModelSnapshot
+    [Migration("20170611195556_emty")]
+    partial class emty
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.1")
@@ -21,7 +22,7 @@ namespace Vega.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Name")
+                    b.Property<string>("Mame")
                         .IsRequired()
                         .HasMaxLength(255);
 

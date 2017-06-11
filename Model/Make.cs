@@ -14,7 +14,7 @@ namespace Vega.Model
 
        [Required]
        [StringLengthAttribute(255) ]
-        public string Mame { get; set; }
+        public string Name { get; set; }
 
         public ICollection<Model> models { get; set; }
 
