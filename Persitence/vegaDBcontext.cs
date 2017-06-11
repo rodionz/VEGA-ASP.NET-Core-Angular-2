@@ -13,6 +13,6 @@ namespace Angular_2.Persitence
         }
 
         public DbSet<Make> Makes { get; set; }
-      //  public DbSet<Feature> Features { get; set; }
+      
     }
 }

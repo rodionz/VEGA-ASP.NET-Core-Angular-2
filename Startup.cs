@@ -32,9 +32,9 @@ namespace WebApplicationBasic
         public void ConfigureServices(IServiceCollection services)
         {
 
-            var connectionstring = "";
+            
 
-            services.AddDbContext<VegaDbContext>( option => option.UseSqlServer("..."));
+            services.AddDbContext<VegaDbContext>( option => option.UseSqlServer(Configuration["ConnectionStrings:Default"]));
             // Add framework services.
             services.AddMvc();
         }
