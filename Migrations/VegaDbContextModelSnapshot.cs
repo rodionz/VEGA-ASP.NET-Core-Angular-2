@@ -21,7 +21,9 @@ namespace Vega.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Mame");
+                    b.Property<string>("Mame")
+                        .IsRequired()
+                        .HasMaxLength(255);
 
                     b.HasKey("Id");
 
@@ -35,13 +37,15 @@ namespace Vega.Migrations
 
                     b.Property<int>("MakeId");
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(255);
 
                     b.HasKey("Id");
 
                     b.HasIndex("MakeId");
 
-                    b.ToTable("Model");
+                    b.ToTable("Models");
                 });
 
             modelBuilder.Entity("Vega.Model.Model", b =>

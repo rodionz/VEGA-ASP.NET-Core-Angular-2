@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace Vega.Migrations
 {
-    public partial class InitialModel : Migration
+    public partial class Anotations : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -15,7 +15,7 @@ namespace Vega.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Mame = table.Column<string>(nullable: true)
+                    Mame = table.Column<string>(maxLength: 255, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -23,19 +23,19 @@ namespace Vega.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Model",
+                name: "Models",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     MakeId = table.Column<int>(nullable: false),
-                    Name = table.Column<string>(nullable: true)
+                    Name = table.Column<string>(maxLength: 255, nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Model", x => x.Id);
+                    table.PrimaryKey("PK_Models", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Model_Makes_MakeId",
+                        name: "FK_Models_Makes_MakeId",
                         column: x => x.MakeId,
                         principalTable: "Makes",
                         principalColumn: "Id",
@@ -43,15 +43,15 @@ namespace Vega.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Model_MakeId",
-                table: "Model",
+                name: "IX_Models_MakeId",
+                table: "Models",
                 column: "MakeId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Model");
+                name: "Models");
 
             migrationBuilder.DropTable(
                 name: "Makes");
