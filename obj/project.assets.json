@@ -9721,10 +9721,10 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Angular 2 + ASP.NET Core\\Vega.csproj",
+      "projectUniqueName": "D:\\Angular\\New Angular\\Angular-2\\Vega.csproj",
       "projectName": "Vega",
-      "projectPath": "D:\\Angular 2 + ASP.NET Core\\Vega.csproj",
-      "outputPath": "D:\\Angular 2 + ASP.NET Core\\obj\\",
+      "projectPath": "D:\\Angular\\New Angular\\Angular-2\\Vega.csproj",
+      "outputPath": "D:\\Angular\\New Angular\\Angular-2\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"

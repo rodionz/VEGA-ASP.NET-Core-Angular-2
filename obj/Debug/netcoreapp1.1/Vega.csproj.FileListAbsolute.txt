@@ -15,3 +15,4 @@ D:\Angular\New Angular\Angular-2\obj\Debug\netcoreapp1.1\Vega.csprojResolveAssem
 D:\Angular\New Angular\Angular-2\obj\Debug\netcoreapp1.1\Vega.AssemblyInfo.cs
 D:\Angular\New Angular\Angular-2\obj\Debug\netcoreapp1.1\Vega.dll
 D:\Angular\New Angular\Angular-2\obj\Debug\netcoreapp1.1\Vega.pdb
+D:\Angular\New Angular\Angular-2\bin\Debug\netcoreapp1.1\Vega.pdb
