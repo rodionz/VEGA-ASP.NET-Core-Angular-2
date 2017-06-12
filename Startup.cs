@@ -11,6 +11,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 
 using Angular_2.Persitence;
+using AutoMapper;
 
 namespace WebApplicationBasic
 {
@@ -32,7 +33,7 @@ namespace WebApplicationBasic
         public void ConfigureServices(IServiceCollection services)
         {
 
-            
+            services.AddAutoMapper();
 
             services.AddDbContext<VegaDbContext>( option => option.UseSqlServer(Configuration["ConnectionStrings:Default"]));
             // Add framework services.

@@ -5,7 +5,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using Angular_2.Persitence;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Vega.Model;
+using AutoMapper;
+using Vega.Controllers.Resourses;
 
 namespace Angular_2.Controllers
 {
@@ -14,20 +17,25 @@ namespace Angular_2.Controllers
 
 
         [HttpGetAttribute("/api/makes")]
-        public IEnumerable<Make> GetMakes()
+        public IEnumerable<MakeResource> GetMakes()
         {
 
 
+          var makes = context.Makes.Include(m => m.models).ToList();
 
+            return mapper.Map<List<Make>, List<MakeResource>>(makes);
         }
+
 
 
         private readonly VegaDbContext context;
 
-        public MakesController(VegaDbContext context)
+        private readonly IMapper mapper;
+
+        public MakesController(VegaDbContext context, IMapper mapper)
         {
             this.context = context;
-
+            this.mapper = mapper;
         }
 
 
