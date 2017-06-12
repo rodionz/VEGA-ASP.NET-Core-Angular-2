@@ -43,6 +43,6 @@
     "zone.js": "0.8.10"
   },
   "devDependencies": {
-    "@angular/cli": "^1.1.0"
+    "@angular/cli": "^1.1.1"
   }
 }
