@@ -1,2 +1,2 @@
-declare const _default: any;
+declare var _default: any;
 export default _default;

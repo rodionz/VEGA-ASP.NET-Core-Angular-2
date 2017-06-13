@@ -1,3 +1,4 @@
+import { VehicleFormComponent } from './components/vehicle-form/vihicle-form.component';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
@@ -11,7 +12,8 @@ export const sharedConfig: NgModule = {
     declarations: [
         AppComponent,
         NavMenuComponent,      
-        HomeComponent
+        HomeComponent,
+        VehicleFormComponent
     ],
     imports: [
         RouterModule.forRoot([
