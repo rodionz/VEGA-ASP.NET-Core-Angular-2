@@ -11,7 +11,16 @@
             <label for="Model">Model</label>
             <select  id="Model" class="form-control">
               <option value=""></option>
-                <option *ngFor="let mod of models" value="{{mod.id}}">{{mod.name}}</option>
-                
-                </select></div>
+                <option *ngFor="let mod of models" value="{{mod.id}}">{{mod.name}}</option>               
+                </select>
+                </div>
+       <h2>Features</h2>
+        <div *ngFor="let f of features" class="checkbox">
+            <label for="feature{{f.id}}">
+                <input type="checkbox" id="feature">{{f.name}}
+                </label>
+                </div>
+
+
+
 </form>

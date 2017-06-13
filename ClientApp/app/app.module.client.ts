@@ -1,3 +1,4 @@
+import { FeatureService } from './Services/feature.service';
 import { MakeService } from './Services/make.service';
 
 import { NgModule } from '@angular/core';
@@ -18,7 +19,8 @@ import { sharedConfig } from './app.module.shared';
     ],
     providers: [
         { provide: 'ORIGIN_URL', useValue: location.origin },
-        MakeService
+        MakeService,
+        FeatureService
     ]
 })
 export class AppModule {
