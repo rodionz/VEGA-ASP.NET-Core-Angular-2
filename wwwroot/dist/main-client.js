@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "695014a228381ad4f997"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "35081070bb47c1a80307"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -1552,7 +1552,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var make_service_1 = __webpack_require__(3);
 var core_1 = __webpack_require__(1);
 var platform_browser_1 = __webpack_require__(46);
-var forms_1 = __webpack_require__(5);
 var http_1 = __webpack_require__(6);
 var app_module_shared_1 = __webpack_require__(13);
 var AppModule = (function () {
@@ -1566,7 +1565,6 @@ AppModule = __decorate([
         declarations: app_module_shared_1.sharedConfig.declarations,
         imports: [
             platform_browser_1.BrowserModule,
-            forms_1.FormsModule,
             http_1.HttpModule
         ].concat(app_module_shared_1.sharedConfig.imports),
         providers: [
@@ -1600,12 +1598,13 @@ exports.sharedConfig = {
         vihicle_form_component_1.VehicleFormComponent
     ],
     imports: [
+        forms_1.FormsModule,
         router_1.RouterModule.forRoot([
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: 'home', component: home_component_1.HomeComponent },
             { path: 'vehicles/new', component: vihicle_form_component_1.VehicleFormComponent },
             { path: '**', redirectTo: 'home' }
-        ], forms_1.FormsModule)
+        ])
     ]
 };
 
@@ -1718,20 +1717,21 @@ var VehicleFormComponent = (function () {
     function VehicleFormComponent(makeservice) {
         this.makeservice = makeservice;
         this.vehicle = {};
-        this.selectedMake = {};
+        this.models = [];
     }
     VehicleFormComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.makeservice.getMakes()
             .subscribe(function (makes) {
-            _this.makes = makes;
-            console.log("Makes: ", _this.makes);
+            return _this.makes = makes;
         });
     };
     VehicleFormComponent.prototype.onMakeChange = function () {
         var _this = this;
-        this.selectedMake = this.makes.find(function (m) { return m.id == _this.vehicle.make; });
-        this.models = this.selectedMake.models;
+        var selectedMake = this.makes.find(function (m) { return m.id == _this.vehicle.make; });
+        console.log("makes", this.makes);
+        console.log(selectedMake);
+        this.models = selectedMake.models;
     };
     return VehicleFormComponent;
 }());
@@ -2136,7 +2136,7 @@ module.exports = "<div class='main-nav'>\r\n    <div class='navbar navbar-invers
 /* 27 */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>New Vehicle</h1>\n<form >\n    <div class=\"form-group\">\n        <label for=\"Make\">Make</label>\n        <select class=\"form-control\" id=\"Make\" (change)=\"onMakeChange()\" ng-model=\"vehicle.make\" name=\"make\">\n            <option value=\"\"></option>\n            <option *ngFor=\"let m of makes\" value=\"{{m.id}}\">{{m.name}}</option>\n            </select></div>\n\n        <div class=\"form-group\">\n            <label for=\"Model\">Model</label>\n            <select  id=\"Model\" class=\"form-control\">\n              <option value=\"\"></option>\n                <option *ngFor=\"let mod of models\" value=\"{{mod.id}}\">{{mod.name}}</option>\n                \n                </select></div>\n</form>\n";
+module.exports = "<h1>New Vehicle</h1>\n<form >\n    <div class=\"form-group\">\n        <label for=\"make\">Make</label>\n        <select class=\"form-control\" id=\"make\" (change)=\"onMakeChange()\" [(ngModel)]=\"vehicle.make\" name=\"make\">\n            <option value=\"\"></option>\n            <option *ngFor=\"let m of makes\" value=\"{{m.id}}\">{{m.name}}</option>\n            </select></div>\n\n        <div class=\"form-group\">\n            <label for=\"Model\">Model</label>\n            <select  id=\"Model\" class=\"form-control\">\n              <option value=\"\"></option>\n                <option *ngFor=\"let mod of models\" value=\"{{mod.id}}\">{{mod.name}}</option>\n                \n                </select></div>\n</form>\n";
 
 /***/ }),
 /* 28 */

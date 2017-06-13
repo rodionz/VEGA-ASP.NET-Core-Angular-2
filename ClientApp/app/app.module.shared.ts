@@ -16,12 +16,13 @@ export const sharedConfig: NgModule = {
         VehicleFormComponent
     ],
     imports: [
+        FormsModule,
         RouterModule.forRoot([
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: 'home', component: HomeComponent },
             {  path: 'vehicles/new', component : VehicleFormComponent  },
             { path: '**', redirectTo: 'home' }
-        ],
-        FormsModule)
+        ]
+        )
     ]
 };
