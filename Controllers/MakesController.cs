@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 using Angular_2.Persitence;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Vega.Model;
+
 using AutoMapper;
-using Vega.Controllers.Resourses;
+
+using WebApplicationBasic.Controllers.Resourses;
+using WebApplicationBasic.Model;
 
 namespace Angular_2.Controllers
 {

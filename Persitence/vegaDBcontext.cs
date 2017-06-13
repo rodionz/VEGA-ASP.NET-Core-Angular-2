@@ -1,7 +1,8 @@
 
 using Microsoft.EntityFrameworkCore;
 using Angular_2;
-using Vega.Model;
+using WebApplicationBasic.Model;
+using Angular_2.Model;
 
 namespace Angular_2.Persitence
 {
@@ -13,6 +14,9 @@ namespace Angular_2.Persitence
         }
 
         public DbSet<Make> Makes { get; set; }
+
+        
+        public DbSet<Feature> Features { get; set; }
       
     }
 }

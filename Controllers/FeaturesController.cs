@@ -1,39 +1,45 @@
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using WebApplicationBasic.Persitence;
+
+
+using Angular_2.Persitence;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-
-
-
-using WebApplicationBasic.Controllers.Resourses;
-using WebApplicationBasic.Core.Models;
-using WebApplicationBasic.Persistence;
-
-
-
 using AutoMapper;
+using Angular_2.Model;
+using Angular_2.Controllers.Resourses;
 
-namespace WebApplicationBasic.Controllers
+namespace Angular_2.Controllers
 {
-  public class FeaturesController : Controller
-  {
-    private readonly VegaDbContext context;
-    private readonly IMapper mapper;
-    public FeaturesController(VegaDbContext context, IMapper mapper)
+    public class FeaturesController : Controller
     {
-      this.mapper = mapper;
-      this.context = context;
-    }
 
-    [HttpGet("/api/features")]
-    public async Task<IEnumerable<KeyValuePairResource>> GetFeatures()
-    {
-      var features = await context.Features.ToListAsync();
-      
-      return mapper.Map<List<Feature>, List<KeyValuePairResource>>(features); 
+
+        [HttpGetAttribute("/api/features")]
+        public async Task<IEnumerable<KeyValuePairResource>> GetFeatures()
+        {
+
+
+          var features = await context.Features.ToListAsync();
+
+            return mapper.Map<List<Feature>, List<KeyValuePairResource>>(features);
+        }
+
+
+
+        private readonly VegaDbContext context;
+
+        private readonly IMapper mapper;
+
+        public FeaturesController(VegaDbContext context, IMapper mapper)
+        {
+            this.context = context;
+            this.mapper = mapper;
+        }
+
+
     }
-  }
 }
