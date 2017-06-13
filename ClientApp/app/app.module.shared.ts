@@ -19,7 +19,7 @@ export const sharedConfig: NgModule = {
         RouterModule.forRoot([
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: 'home', component: HomeComponent },
-          
+            {  path: 'vehicles/new', component : VehicleFormComponent  },
             { path: '**', redirectTo: 'home' }
         ])
     ]
