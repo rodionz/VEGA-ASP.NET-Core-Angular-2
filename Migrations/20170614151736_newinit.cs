@@ -5,17 +5,30 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace Vega.Migrations
 {
-    public partial class Anotations : Migration
+    public partial class newinit : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "Features",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Name = table.Column<string>(maxLength: 255, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Features", x => x.Id);
+                });
+
             migrationBuilder.CreateTable(
                 name: "Makes",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Mame = table.Column<string>(maxLength: 255, nullable: false)
+                    Name = table.Column<string>(maxLength: 255, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -50,6 +63,9 @@ namespace Vega.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "Features");
+
             migrationBuilder.DropTable(
                 name: "Models");
 

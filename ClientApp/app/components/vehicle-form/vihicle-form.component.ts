@@ -21,7 +21,7 @@ export class VehicleFormComponent implements OnInit {
 
   models: any[] = [];
 
- features;
+  features: any[];
 
   ngOnInit() {
 

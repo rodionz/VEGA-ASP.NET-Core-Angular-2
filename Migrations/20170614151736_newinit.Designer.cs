@@ -8,8 +8,8 @@ using Angular_2.Persitence;
 namespace Vega.Migrations
 {
     [DbContext(typeof(VegaDbContext))]
-    [Migration("20170614074222_deleted")]
-    partial class deleted
+    [Migration("20170614151736_newinit")]
+    partial class newinit
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

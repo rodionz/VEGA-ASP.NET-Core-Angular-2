@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "a2eb4bd2dcbf86523257"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "7c923002cee4d0325383"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -831,7 +831,8 @@ var FeatureService = (function () {
         this.http = http;
     }
     FeatureService.prototype.getFeatures = function () {
-        return this.http.get('/api/features');
+        return this.http.get('/api/features')
+            .map(function (res) { return res.json(); });
     };
     return FeatureService;
 }());
