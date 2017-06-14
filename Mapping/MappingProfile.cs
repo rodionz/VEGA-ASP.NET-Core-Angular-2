@@ -1,4 +1,6 @@
-﻿using AutoMapper;
+﻿using Angular_2.Controllers.Resourses;
+using Angular_2.Model;
+using AutoMapper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +18,9 @@ namespace Vega.Mapping
         {
             CreateMap<Make, MakeResource>();
             CreateMap<Model.Model, ModelResource>();
+            CreateMap<Make, KeyValuePairResource>();
+            CreateMap<Model.Model, KeyValuePairResource>();
+            CreateMap<Feature, KeyValuePairResource>();
         }
     }
 }

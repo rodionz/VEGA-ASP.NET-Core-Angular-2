@@ -8,9 +8,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 using AutoMapper;
-
-using WebApplicationBasic.Controllers.Resourses;
-using WebApplicationBasic.Model;
+using Vega.Controllers.Resourses;
+using Vega.Model;
 
 namespace Angular_2.Controllers
 {

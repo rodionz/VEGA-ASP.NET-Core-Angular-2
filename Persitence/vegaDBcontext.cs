@@ -1,8 +1,8 @@
 
 using Microsoft.EntityFrameworkCore;
 using Angular_2;
-using WebApplicationBasic.Model;
 using Angular_2.Model;
+using Vega.Model;
 
 namespace Angular_2.Persitence
 {
