@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 
 
 @Injectable()
-export class MakeService {
+export class VehicleService {
 
   constructor(private http :Http) { }
 
@@ -15,5 +15,10 @@ getMakes(){
     
 }
 
+getFeatures() {
+
+    return this.http.get('/api/features')
+        .map(res => res.json())
+}
 
 }

@@ -1,5 +1,5 @@
-import { FeatureService } from './Services/feature.service';
-import { MakeService } from './Services/make.service';
+
+import { VehicleService } from './Services/vehicle.service';
 
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -19,8 +19,8 @@ import { sharedConfig } from './app.module.shared';
     ],
     providers: [
         { provide: 'ORIGIN_URL', useValue: location.origin },
-        MakeService,
-        FeatureService
+        VehicleService,
+        
     ]
 })
 export class AppModule {
