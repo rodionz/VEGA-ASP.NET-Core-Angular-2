@@ -17,6 +17,13 @@ namespace Angular_2.Persitence
 
         
         public DbSet<Feature> Features { get; set; }
+
+
+        protected override void OnModelCreating(ModelBuilder modelBuider) {
+
+            modelBuider.Entity<VehicleFeature>().HasKey(vf => new { vf.FeatureID, vf.VehicleID });
+            
+        }
       
     }
 }
